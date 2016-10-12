@@ -1,6 +1,6 @@
 #youta
 ## Git clone
-    $ git@git.oschina.net:sunshine517/youta.git
+    $ git@github.com:Marciagm/yota.git
 ## Quick Start
 ### Install dependencies:
     $ npm install
