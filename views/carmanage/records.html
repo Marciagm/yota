@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>违章记录</title>
+    <link href="../css/style.css" rel="stylesheet"/>
+    
+</head>
+<body class="bg_color">
+	<div class="wrapper">
+        <div class="endorse_info_tab">
+			<!--过滤时间star-->
+			<a class="select" id="js_time"><label>过滤时间</label></a>
+			<div class="filter_time">
+				<ul class="ul_style border_top">
+					<li class="border_top">
+						<input type="radio" name="filter_time_option" class="filter_time_option" id="time_all"/>
+						<label for="time_all" data-tag="time1000">全部</label>
+					</li>
+					<li class="border_top">
+						<input type="radio" name="filter_time_option" class="filter_time_option" id="time_one"/>
+						<label for="time_one" data-tag="time1">近一个月</label>
+					</li>
+					<li class="border_top">
+						<input type="radio" name="filter_time_option" class="filter_time_option" id="time_three"/>
+						<label for="time_three" data-tag="time3">近三个月</label>
+					</li>
+					<li class="border_top">
+						<input type="radio" name="filter_time_option" class="filter_time_option" id="time_six"/>
+						<label for="time_six" data-tag="time6">近半年</label>
+					</li>
+				</ul>
+			</div>
+			<!--过滤时间end-->
+			
+			<!--处理状态star-->
+			<a class="border" id="js_status"><label>处理状态</label></a>
+			<div class="process_state">
+				<ul class="ul_style border_top">
+					<li class="border_top">
+						<input type="radio" name="process_state_option" class="process_state_option" id="state_all"/>
+						<label for="state_all" data-tag="deal1000">全部</label>
+					</li>
+					<li class="border_top">
+						<input type="radio" name="process_state_option" class="process_state_option" id="state_finished"/>
+						<label for="state_finished" data-tag="deal1">已处理</label>
+					</li>
+					<li class="border_top">
+						<input type="radio" name="process_state_option" class="process_state_option" id="state_untreated"/>
+						<label for="state_untreated" data-tag="deal-1">未处理</label>
+					</li>
+				</ul>
+			</div>
+			<!--处理状态end-->
+			
+			<!--缴款状态start-->
+			<a class="border" id="js_penality"><label>缴款状态</label></a>
+			<div class="process_penality">
+				<ul class="ul_style border_top">
+					<li class="border_top">
+						<input type="radio" name="process_penality_option" class="process_penality_option" id="penality_all"/>
+						<label for="penality_all" data-tag="pay1000">全部</label>
+					</li>
+					<li class="border_top">
+						<input type="radio" name="process_penality_option" class="process_penality_option" id="penality_finished"/>
+						<label for="penality_finished" data-tag="pay1">已缴款</label>
+					</li>
+					<li class="border_top">
+						<input type="radio" name="process_penality_option" class="process_penality_option" id="penality_untreated"/>
+						<label for="penality_untreated" data-tag="pay-1">未缴款</label>
+					</li>
+				</ul>
+			</div>
+			<!--缴款状态end-->
+		</div>
+		<div id="js_list">
+		</div>
+	</div>
+
+	<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        var timeStamp = (+new Date());
+        document.write('<script src="../js/records.bundle.js?' + timeStamp + '"><\/script>' )
+    </script>
+</body>
+</html>

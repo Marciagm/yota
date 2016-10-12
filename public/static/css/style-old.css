@@ -1,0 +1,624 @@
+@charset "utf-8";
+*{padding: 0;margin: 0;border: 0}
+@media only screen and (max-width: 319px){html{font-size: 12px;} }
+@media only screen and (min-width: 320px) and (max-width: 352px){html{font-size: 14px;} }
+@media only screen and (min-width: 352px) and (max-width: 384px){html{font-size: 16px;} }
+@media only screen and (min-width: 384px) and (max-width: 416px){html{font-size: 18px;} }
+@media only screen and (min-width: 416px) and (max-width: 448px){html{font-size: 18px;} }
+@media only screen and (min-width: 448px) and (max-width: 480px){html{font-size: 20px;} }
+@media only screen and (min-width: 480px) and (max-width: 512px){html{font-size: 22px;} }
+@media only screen and (min-width: 512px) and (max-width: 544px){html{font-size: 24px;} }
+@media only screen and (min-width: 544px) and (max-width: 608px){html{font-size: 26px;} }
+@media only screen and (min-width: 576px) and (max-width: 608px){html{font-size: 28px;} }
+@media only screen and (min-width: 608px) and (max-width: 640px){html{font-size: 32px;} }
+@media only screen and (min-width: 640px){html{font-size: 32px;} }
+body{
+ /* background: url(../images/blue.jpg);*/
+  background-size: cover;
+}
+/**公共样式**/
+.bg_color{background:#eeeeee;}
+.font_bold{ font-weight:bold}
+.color3{color:#333333}
+.color9{color:#999999}
+.caret{
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+	background:url(../images/arrow_down.png);
+	background-size:50%
+}
+.caret_right{
+    background: url(../images/arrow_right.png) right center no-repeat;
+    background-size:contain;
+    display: inline-block;
+    float: right;
+    padding-right: 1rem;
+}
+.about{
+	    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background: url(../images/wh.png);
+    background-size: contain;
+    float: right;
+}
+.tips{
+    text-align: center;
+    padding: 1rem;
+    background: #EEEEEE;
+    font-size: 0.9rem;
+    color: #999999;
+}
+.big_button{display:block;margin:2rem;padding:1rem;background: #2a7efc;color:white;font-size:1.01rem; text-align:center;border-radius: 5px;}
+.wrapper{background:white}
+.border_bottom{border-bottom:1px solid #DEDEDE}
+.border_top{border-top:1px solid #DEDEDE}
+.margin_bottom{margin-bottom: 1rem}
+.ul_style>li{ list-style:none;padding:1rem; position:relative;white-space: nowrap;}
+.ul_style>li>label{ position:relative; z-index:5}
+.ul_style>li>input{font-size:1rem; outline:none;padding-left:1rem;color:#999999}
+.mask{position: fixed;width: 100%;height: 100%;background: rgba(0, 0, 0, 0.60);top: 0;left: 0;z-index: 20;display: none}
+.mask>img{ width: 90%;margin-left: 5%;margin-top:5rem}
+.close_mask{text-align: center;padding: 1rem;    color: #ECEFF1;text-decoration: underline;}
+/**添加车辆页面**/
+.vehicles_kind{
+	-webkit-appearance: none;
+    font-size: 1rem;
+    color: #2a7efc;
+	min-width:5rem;
+	outline: none;
+	display:block;
+	position:relative;
+	width:100%;
+	z-index: 3;
+	background: none;
+}
+#vehicles_kind{position: absolute;left:0;top:1rem;width:100%}
+#vehicles_kind>div>input{font-size: 1rem;color:#2a7efc; outline: none }
+#vehicles_kind>div:nth-child(1):after{
+	content: '';
+    height: 1rem;
+    width: 1rem;
+    background: url(../images/arrow_down.png) center center no-repeat;
+    position: absolute;
+    right: 1rem;
+    top: 0;
+    background-size: contain;
+}
+.vehicles_kind_choose{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.61);
+    z-index: 10;
+    display: none;
+    white-space: normal;
+}
+.vehicles_kind_choose>div:nth-child(1){
+    margin: 4rem 1rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 5px;
+}
+.vehicles_kind_choose .vehicles_kind_option{
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid #999999;
+    color: #666666;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+.vehicles_kind_1{
+    padding-bottom: 1rem;
+    display: block;
+    color: #999999;
+    border-bottom: 1px solid #dedede;
+    margin-bottom: 1rem;
+    position: relative;
+}
+.vehicles_kind_1:before,.vehicles_kind_2:before{
+    content: '';
+    width: 1rem;
+    border-bottom: 1px solid #dedede;
+    position: absolute;
+    bottom: -1px;
+    height: 100%;
+    left: -1rem;
+}
+.vehicles_kind_1:after,.vehicles_kind_2:after{
+    content: '';
+    width: 1rem;
+    border-bottom: 1px solid #dedede;
+    position: absolute;
+    bottom: -1px;
+    height: 100%;
+    right: -1rem;
+}
+.vehicles_kind_2{
+    padding-bottom: 1rem;
+    display: block;
+    color: #999999;
+    border-bottom: 1px solid #dedede;
+    margin-bottom: 1rem;
+    position: relative;
+    margin-top: 2rem;
+}
+.vehicles_kind_choose .select,
+.province_choose .select {background: #2a7efc;border: none;color: white;}
+#vehicles_number{position: absolute;left:0.5rem;top:0.7rem;}
+#vehicles_number>div:nth-child(1):after{
+    content: '';
+    height: 100%;
+    width: 1.5rem;
+    background: url(../images/arrow_down_blue.png) white center center no-repeat;
+    position: absolute;
+    right: 0.5rem;
+    top: 0;
+    background-size: 70%;
+    z-index: 2;
+    border: 1px solid #2a7efc;
+    box-sizing: border-box;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+}
+#vehicles_number_value{
+    width: 1rem;
+    font-size: 1rem;
+    color: white;
+    border: 0.3rem solid #2a7efc;
+    background: #2a7efc;
+    border-radius: 5px 0 0 5px;
+}
+.vehicles_number_choose{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.61);
+    z-index: 10;
+    display: none;
+
+}
+.vehicles_number_choose>div:nth-child(1){
+    margin: 4rem 1rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 5px;
+    white-space: normal;
+    text-align: center;
+}
+.vehicles_number_option{
+    display: inline-block;
+    padding: 0.5rem;
+    border: 1px solid #999999;
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+    color: #999999;
+}
+.vehicles_number_choose .select{background: #2a7efc;border: none;color: white;}
+
+/**编辑车辆页面**/
+.delete_vehicles{display: inline-block;margin-top: 4rem; text-align: center;color: #999999;position: relative;}
+.delete_vehicles:after{height: 1px;width: 100%; position: absolute;bottom: -5px;left: 0; background: #999999;content: ''}
+.delete_vehicles_dialog{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+}
+.delete_vehicles_dialog>div{
+    margin: 2rem;
+    background: white;
+    border-radius: 5px;
+    padding: 2rem 0 0 0;
+    margin-top: 15rem;
+    color: #333333;
+}
+.delete_vehicles_dialog>div>a{
+    width: 50%;
+    text-align: center;
+    display: inline-block;
+    margin-top:2rem;
+    padding: 1rem 0;
+    color: #333333;
+    border-top: 1px solid #999999;
+}
+.delete_vehicles_no{background: #2a7efc;border-color: #2a7efc;color: white!important;border-bottom-right-radius: 5px;}
+/**我的车辆页面**/
+.mycar{background: none}
+.mycar .ul_style>li{background: #ffffff;margin-bottom:1rem}
+.mycar_number{
+    height: 100%;
+    width:6.5rem;
+    text-align: center;
+    float: left;
+    border: 5px solid #2a7efc;
+    border-radius: 2px;
+}
+
+
+.mycar_number>label{
+    display: block;
+    padding: 0.3rem 2rem 0.3rem 0.5rem;
+    border: 2px solid #ffffff;
+    background: #2a7efc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: white;
+    position: relative;
+}
+.mycar_number>label:after{
+    content: '';
+    height: 1rem;
+    width: 1rem;
+    background: url("../images/edit.png") center center no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: 0.4rem;
+    top: 0.4rem;
+}
+
+
+
+
+.mycar_state{margin-left: 8rem;padding-right: 2rem;position: relative}
+.mycar_state>label{display: block;color: #666666}
+.mycar_state>label:nth-child(1){margin-bottom:0.5rem;color: #666666}
+.traffic_violation{
+    clear: both;
+    padding: 1rem 0 0 0;
+    border-top: 1px solid #DEDEDE;
+    margin-top: 1rem;
+    position: relative;
+}
+.traffic_violation:before,.traffic_tips:before {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: -1px;
+    border-top: 1px solid #dedede;
+    box-sizing: border-box;
+    width: 1rem;
+}
+.traffic_violation:after,.traffic_tips:after {
+    content: '';
+    position: absolute;
+    right: -1rem;
+    top: -1px;
+    border-top: 1px solid #dedede;
+    box-sizing: border-box;
+    width: 1rem;
+}
+.traffic_tips{
+    padding: 1rem 0 0 0;
+    border-top: 1px solid #DEDEDE;
+    margin-top: 1rem;
+    position: relative;
+    font-size: 0.9rem;
+    color: #666666;
+}
+.adopt{color: #4ca901}
+.fail{color:#ff4200}
+.red{color:#ff4200}
+.update{
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+    background: url(../images/update.png) center center no-repeat;
+    background-size: contain;
+    top: 0.25rem;
+    right: 0
+}
+/**添加驾驶证页面and编辑驾驶证页面**/
+.province{display: inline-block}
+#province{position: absolute;left:0.5rem;top:1rem;}
+#province>div:nth-child(1):after{
+    content: '';
+    height: 100%;
+    width: 1.5rem;
+    background: url(../images/arrow_down.png) white center center no-repeat;
+    position: absolute;
+    right: 0.5rem;
+    top: 0;
+    background-size: 70%;
+    z-index: 2;
+}
+#province_value{
+    width: 3rem;
+    font-size: 1rem;
+    color: #333333;
+    background: white;
+}
+.province_choose{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    left: 0;
+    background: -webkit-linear-gradient(top, rgba(249, 249, 249, 0) 50%,rgba(2, 2, 2, 0.61) 100%);
+    z-index: 10;
+    display: none;
+
+}
+.province_choose>div:nth-child(1){
+    background: white;
+    padding: 0 1rem;
+    white-space: normal;
+    text-align: center;
+    margin-top: 13rem;
+    overflow: auto;
+    height: 50%;
+}
+.province_option{
+    display: block;
+    padding: 0.5rem;
+    color: #333333;
+    border-bottom: 1px solid #dedede;
+    text-align: left;
+}
+.city{display: inline-block}
+#city{position: absolute;right:0.5rem;top:1rem;}
+#city>div:nth-child(1):after{
+    content: '';
+    height: 100%;
+    width: 1.5rem;
+    background: url(../images/arrow_down.png) white center center no-repeat;
+    position: absolute;
+    right: 0.5rem;
+    top: 0;
+    background-size: 70%;
+    z-index: 2;
+}
+#city_value{
+    width: 8rem;
+    font-size: 1rem;
+    color: #333333;
+    background: white;
+    text-align: right;
+    padding-right: 3rem;
+}
+.city_choose{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    left: 0;
+    background: -webkit-linear-gradient(top, rgba(249, 249, 249, 0) 50%,rgba(2, 2, 2, 0.61) 100%);
+    z-index: 10;
+    display: none;
+
+}
+.city_choose>div:nth-child(1){
+    background: white;
+    padding: 0 1rem;
+    white-space: normal;
+    text-align: center;
+    margin-top: 13rem;
+    overflow: auto;
+    height: 50%;
+}
+.city_option{
+    display: block;
+    padding: 0.5rem;
+    color: #333333;
+    border-bottom: 1px solid #dedede;
+    text-align: left;
+}
+
+.delete_driverLicense{display: inline-block;margin-top: 4rem; text-align: center;color: #999999;position: relative;}
+.delete_driverLicense:after{height: 1px;width: 100%; position: absolute;bottom: -5px;left: 0; background: #999999;content: ''}
+.delete_driverLicense_dialog{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+}
+.delete_driverLicense_dialog>div{
+    margin: 2rem;
+    background: white;
+    border-radius: 5px;
+    padding: 2rem 0 0 0;
+    margin-top: 15rem;
+    color: #333333;
+}
+.delete_driverLicense_dialog>div>a{
+    width: 50%;
+    text-align: center;
+    display: inline-block;
+    margin-top:2rem;
+    padding: 1rem 0;
+    color: #333333;
+    border-top: 1px solid #999999;
+}
+.delete_driverLicense_no{background: #2a7efc;border-color: #2a7efc;color: white!important;border-bottom-right-radius: 5px;}
+
+/**我的驾驶证**/
+.driverLicense{background: none}
+.driverLicense .ul_style>li{background: #ffffff;margin-bottom:1rem}
+.driverLicense_number{
+    height: 100%;
+    float: left;
+    border: 5px solid #2a7efc;
+    border-radius: 2px;
+}
+.driverLicense_number>label{
+   display: block;
+    padding: 0.3rem 1rem 0.3rem 0.5rem;
+    border: 2px solid #2a7efc;
+    background: #2a7efc;
+    box-sizing: border-box;
+    color: white;
+    position: relative;
+    width: 8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.driverLicense_number>label:after{
+    content: '';
+    height: 1rem;
+    width: 1rem;
+    background: url("../images/edit.png") right center no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: 0.4rem;
+    top: 0.4rem;
+}
+.driverLicense_state{margin-left: 9rem;padding-right: 2rem;position: relative}
+.driverLicense_state>label{display: block;color: #666666}
+.driverLicense_state>label:nth-child(1){margin-bottom:0.5rem;color: #666666}
+/**违章详情**/
+.endorse_info_tab{
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    background: white;
+    z-index: 10;
+	top:0
+}
+.endorse_info_tab>a{
+	display: inline-block;
+    width: 30%;
+    padding: 1rem 0;
+    box-sizing: border-box;
+}
+.endorse_info_tab>a>label:after{
+	content: '';
+    width: 1.2rem;
+    height: 0.9rem;
+    background: url(../images/arrow_down.png) center center no-repeat;
+    display: inline-block;
+    background-size: contain;
+    margin-left: 0.5rem;
+}
+.endorse_info_tab>a.select>label{color:#2a7efc}
+.endorse_info_tab>a.select>label:after{
+    background: url(../images/arrow_down_blue.png) center center no-repeat;
+
+}
+.filter_time,.process_state, .process_penality {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.60);
+	display:none
+}
+.filter_time>.ul_style,.process_state>.ul_style, .process_penality>.ul_style{
+	background:white
+}
+.filter_time .border,
+.process_state .border,
+.process_penality .border {
+    border-right: 1px solid #DEDEDE;
+    border-left: 1px solid #DEDEDE;
+}
+
+.filter_time_option,
+.process_state_option,
+.process_penality_option{
+    display:none
+}
+
+.filter_time_option+label,
+.process_state_option+label,
+.process_penality_option+label {
+    display:block; text-align:left;position:relative
+}
+
+.filter_time_option:checked+label,
+.process_state_option:checked+label,
+.process_penality_option:checked+label {
+    color:#2a7efc
+}
+.filter_time_option:checked+label:after,
+.process_state_option:checked+label:after,
+.process_penality_option:checked+label:after {
+    content: '\2714';
+    position: absolute;
+    right:0;
+    display: inline-block;
+    top: 0;
+	color:#2a7efc
+}
+.endorse_info_list{
+ margin-top:3rem;
+}
+.endorse_info_list>.ul_style>li{padding-left:2rem;position:relative}
+.endorse_info_list>.ul_style>li:before{
+	content:'';
+	position:absolute;
+	height:100%;
+	width:1px;
+	background:#DEDEDE;
+	top:0;
+	left:1rem
+}
+.endorse_time{background:#eeeeee;color:#2a7efc}
+.endorse_time:after{
+	content: '';
+    height: 1.2rem;
+    width: 1.2rem;
+    background: url(../images/timer.png) center center no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 0.4rem;
+}
+/**历史扣分详情页面*/
+.calendar{
+    width:100%;
+    height: 400px;
+    display: block;
+}
+.calendar .calendar-title-box{
+    position: relative;
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    text-align:center;
+    border-bottom: 1px solid #ddd;
+    display: none;
+}
+span#prevMonth:after {
+    content: "<";
+    position: absolute;
+    right: 5rem;
+    color: #666666;
+    font-weight: bold;
+}
+span#prevMonth,span#nextMonth{position: relative}
+span#nextMonth:after{
+    content: ">";
+    position: absolute;
+    left: 5rem;
+    color: #666666;
+    font-weight: bold;
+}
+.calendar-body-box{width: 100%}
+#calendarTable{width: 100%;border-spacing: 0;}
+#calendarTable th{padding: 1rem;color: #999999;font-size: 1rem;background: #EEEEEE}
+#calendarTable td{padding: 1rem;text-align: center;padding-bottom: 3rem;border-bottom: 1px solid #DEDEDE;color: #999999;position: relative}
+.otherMonth{color:#ffffff!important;border-bottom: 1px solid #ffffff!important}
+.mark{
+    padding: 0.5rem 0;
+    border-radius: 1rem;
+    font-size: 1rem;
+    color: #ffffff;
+    background: #FF6837;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    margin: -1rem;
+    width: 2rem;
+}
+.otherMonth>.mark{display: none}

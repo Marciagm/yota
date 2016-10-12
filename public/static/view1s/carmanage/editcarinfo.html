@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title></title>
+    <link href="../css/style.css" rel="stylesheet"/>
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body class="bg_color">
+<div class="wrapper">
+    <div class="tips">请对照《机动车行驶证》填写以下信息</div>
+    <ul class="border_bottom border_top ul_style">
+        <li class="border_top">
+            <label class="color3">车辆类型</label>
+            <div id="vehicles_kind">
+                <div style="margin: 0 1rem 0 6.5rem;" onclick="$('.vehicles_kind_choose').show()">
+                    <input id="vehicles_kind_value" type="text" value="小型汽车" readonly/>
+                </div>
+                <div class="vehicles_kind_choose">
+                    <div>
+                        <label class="vehicles_kind_1">汽车类型</label>
+                        <a class="vehicles_kind_option select">小型汽车</a>
+                        <a class="vehicles_kind_option">大型汽车</a>
+                        <a class="vehicles_kind_option">使馆汽车</a>
+                        <a class="vehicles_kind_option">境外汽车</a>
+                        <a class="vehicles_kind_option">澳门入境汽车</a>
+
+                        <label class="vehicles_kind_2">摩托车类型</label>
+                        <a class="vehicles_kind_option">普通摩托车</a>
+                        <a class="vehicles_kind_option">临时入境摩托车</a>
+                    </div>
+                </div>
+                <script>
+                    ///选择车辆类型事件
+                    $(function(){
+                        $('.vehicles_kind_option').click(function(){
+                            var _val=$(this).text();
+                            $(this).siblings('.vehicles_kind_option').removeClass('select');
+                            $(this).addClass('select');
+                            $('#vehicles_kind_value').val(_val);
+                            $(".vehicles_kind_choose").hide();
+
+                        })
+                    })
+                </script>
+            </div>
+        </li>
+        <li class="border_top">
+            <label class="color3">车牌号码</label>
+            <div id="vehicles_number">
+                <div style="margin: 0 2rem 0 6rem;" onclick="$('.vehicles_number_choose').show()">
+                    <input id="vehicles_number_value" type="text" value="京"/>
+                </div>
+                <div class="vehicles_number_choose">
+                    <div>
+                        <a class="vehicles_number_option select">京</a>
+                        <a class="vehicles_number_option">津</a>
+                        <a class="vehicles_number_option">翼</a>
+                        <a class="vehicles_number_option">晋</a>
+                        <a class="vehicles_number_option">蒙</a>
+                        <a class="vehicles_number_option">辽</a>
+                        <a class="vehicles_number_option">吉</a>
+                        <a class="vehicles_number_option">黑</a>
+                        <a class="vehicles_number_option">沪</a>
+                        <a class="vehicles_number_option">苏</a>
+                        <a class="vehicles_number_option">浙</a>
+                        <a class="vehicles_number_option">皖</a>
+                        <a class="vehicles_number_option">闽</a>
+                        <a class="vehicles_number_option">赣</a>
+                        <a class="vehicles_number_option">鲁</a>
+                        <a class="vehicles_number_option">豫</a>
+                        <a class="vehicles_number_option">鄂</a>
+                        <a class="vehicles_number_option">湘</a>
+                        <a class="vehicles_number_option">粤</a>
+                        <a class="vehicles_number_option">桂</a>
+                        <a class="vehicles_number_option">琼</a>
+                        <a class="vehicles_number_option">渝</a>
+                        <a class="vehicles_number_option">川</a>
+                        <a class="vehicles_number_option">贵</a>
+                        <a class="vehicles_number_option">云</a>
+                        <a class="vehicles_number_option">藏</a>
+                        <a class="vehicles_number_option">陕</a>
+                        <a class="vehicles_number_option">甘</a>
+                        <a class="vehicles_number_option">青</a>
+                        <a class="vehicles_number_option">宁</a>
+                        <a class="vehicles_number_option">新</a>
+                    </div>
+                </div>
+                <script>
+                    ///选择车牌归属地事件
+                    $(function(){
+                        $('.vehicles_number_option').click(function(){
+                            var _val=$(this).text();
+                            $(this).siblings('.vehicles_number_option').removeClass('select');
+                            $(this).addClass('select');
+                            $('#vehicles_number_value').val(_val);
+                            $(".vehicles_number_choose").hide();
+
+                        })
+                    })
+                </script>
+            </div>
+            <input style="margin-left:3.5rem" type="text" placeholder="请输入完整车牌号"/>
+        </li>
+        <li class="border_top">
+            <label class="color3">发动机号</label>
+            <input  type="text" placeholder="请输入发动机号"/>
+            <a class="about"></a>
+        </li>
+        <li class="border_top">
+            <label class="color3">车辆名称</label>
+            <input  type="text" placeholder="京A073379"/>
+        </li>
+    </ul>
+</div>
+<a class="big_button">保存并查询</a>
+<div style="text-align: center">
+    <a class="delete_vehicles" onclick="$('.delete_vehicles_dialog').show()">删除车辆信息</a>
+    <div class="delete_vehicles_dialog">
+        <div>
+           您是否要删除该号牌所有信息？
+            <a class="delete_vehicles_yes">是</a><a class="delete_vehicles_no">否</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

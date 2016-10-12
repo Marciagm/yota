@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title></title>
+    <link href="../css/style.css" rel="stylesheet"/>
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body class="bg_color">
+	<div class="wrapper">
+        <div class="tips">请对照《机动车行驶证》填写以下信息</div>
+		<ul class="border_bottom border_top ul_style">
+			<li>
+                <label class="color3">驾驶证号</label>
+                <input  type="text" placeholder="请输入驾驶证号"/>
+                <a class="about" onclick="$(this).next('.mask').show()"></a>
+                <div class="mask">
+                    <img src="../images/driverLicense1.png"/>
+                    <div class="close_mask" onclick="$(this).parent('.mask').hide()">我知道了</div>
+                </div>
+            </li>
+            <li class="border_top">
+                <label class="color3">档案编号</label>
+                <input  type="text" placeholder="请输入档案编号"/>
+                <a class="about" onclick="$(this).next('.mask').show()"></a>
+                <div class="mask">
+                    <img src="../images/driverLicense2.png"/>
+                    <div class="close_mask" onclick="$(this).parent('.mask').hide()">我知道了</div>
+                </div>
+            </li>
+            <li class="border_top">
+                <label class="color3">发证机关</label>
+                <div id="province">
+                    <div style="margin: 0 2rem 0 6rem;" onclick="$('.province_choose').show()">
+                        <input id="province_value" type="text" readonly value="省"/>
+                    </div>
+                    <div class="province_choose">
+                        <div>
+                            <a class="province_option">北京</a>
+                            <a class="province_option">天津</a>
+                            <a class="province_option">河北</a>
+                            <a class="province_option">山西</a>
+                            <a class="province_option">内蒙古</a>
+                            <a class="province_option">辽宁</a>
+                            <a class="province_option">吉林</a>
+                            <a class="province_option">黑龙江</a>
+                            <a class="province_option">上海</a>
+                            <a class="province_option">江苏</a>
+                            <a class="province_option">浙江</a>
+                            <a class="province_option">安徽</a>
+                            <a class="province_option">福建</a>
+                            <a class="province_option">江西</a>
+                            <a class="province_option">山东</a>
+                            <a class="province_option">河南</a>
+                            <a class="province_option">湖北</a>
+                            <a class="province_option">湖南</a>
+                            <a class="province_option">广东</a>
+                            <a class="province_option">广西</a>
+                            <a class="province_option">海南</a>
+                            <a class="province_option">重庆</a>
+                            <a class="province_option">四川</a>
+                            <a class="province_option">贵州</a>
+                            <a class="province_option">云南</a>
+                            <a class="province_option">西藏</a>
+                            <a class="province_option">陕西</a>
+                            <a class="province_option">甘肃</a>
+                            <a class="province_option">青海</a>
+                            <a class="province_option">宁夏</a>
+                            <a class="province_option">新疆</a>
+                        </div>
+                    </div>
+                    <script>
+                        ///选择车牌归属地事件
+                        $(function(){
+                            $('.province_option').click(function(){
+                                var _val=$(this).text();
+                                $(this).siblings('.province_option').removeClass('select');
+                                $(this).addClass('select');
+                                $('#province_value').val(_val);
+                                $(".province_choose").hide();
+
+                            })
+                        })
+                    </script>
+                </div>
+
+                <div id="city">
+                    <div onclick="$('.city_choose').show()">
+                        <input id="city_value" type="text" readonly value="市"/>
+                    </div>
+                    <div class="city_choose">
+                        <div>
+                            <a class="city_option">南京市</a>
+                            <a class="city_option">连云港市</a>
+                            <a class="city_option">苏州市</a>
+                            <a class="city_option">无锡市</a>
+                            <a class="city_option">常州市</a>
+                            <a class="city_option">扬州市</a>
+                            <a class="city_option">徐州市</a>
+                        </div>
+                    </div>
+                    <script>
+                        ///选择车牌归属地事件
+                        $(function(){
+                            $('.city_option').click(function(){
+                                var _val=$(this).text();
+                                $(this).siblings('.city_option').removeClass('select');
+                                $(this).addClass('select');
+                                $('#city_value').val(_val);
+                                $(".city_choose").hide();
+
+                            })
+                        })
+                    </script>
+                </div>
+
+            </li>
+            <li class="border_top">
+                <label class="color3" style="letter-spacing: 0.33rem">备注名</label>
+                <input  type="text" placeholder="我的驾驶证"/>
+            </li>
+		</ul>
+	</div>
+	<a class="big_button">添加</a>
+    <div style="text-align: center">
+        <a class="delete_driverLicense" onclick="$('.delete_driverLicense_dialog').show()">删除驾驶证信息</a>
+        <div class="delete_driverLicense_dialog">
+            <div>
+                您是否要删除驾驶证信息？
+                <a class="delete_driverLicense_yes">是</a><a class="delete_driverLicense_no">否</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

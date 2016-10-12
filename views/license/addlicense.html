@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>添加驾驶证信息</title>
+    <link href="../css/style.css" rel="stylesheet"/>
+    
+</head>
+<body class="bg_color">
+	<div class="wrapper">
+        <div class="tips">请对照《机动车行驶证》填写以下信息</div>
+		<ul class="border_bottom border_top ul_style">
+			<li>
+                <label class="color3">驾驶证号</label>
+                <input  type="text" maxlength="18" placeholder="请输入驾驶证号" id="js_licenseNO" />
+                <a class="about" id="js_helplicenseNO"></a>
+                <div class="mask">
+                    <img src="../images/driverLicense1.png"/>
+                    <!-- <div class="close_mask" id="js_licensehelp">我知道了</div> -->
+                </div>
+            </li>
+            <li class="border_top">
+                <label class="color3">档案编号</label>
+                <input  type="text" maxlength="12" placeholder="请输入档案编号" id="js_fileNO" />
+                <a class="about" id="js_helpfileNO"></a>
+                <div class="mask">
+                    <img src="../images/driverLicense2.png"/>
+                    <!-- <div class="close_mask" id="js_NOhelp">我知道了</div> -->
+                </div>
+            </li>
+            <li class="border_top">
+                <label class="color3">发证机关</label>
+                <div id="province">
+                    <div style="margin: 0 2rem 0 6rem;" id="js_choosepro">
+                        <input id="province_value" type="text" readonly value="省"/>
+                    </div>
+                    <div class="province_choose" id="js_province">
+                    </div>
+                </div>
+
+                <div id="city">
+                    <div id="js_city" style="display: none;">
+                        <input id="city_value" type="text" readonly value="市"/>
+                    </div>
+                    <div class="city_choose" id="js_city_list">
+                    </div>
+                </div>
+
+            </li>
+            <li class="border_top">
+                <label class="color3" style="letter-spacing: 0.33rem">备注名</label>
+                <input  type="text" maxlength="18" id="js_displayname" placeholder="我的驾驶证"/>
+            </li>
+		</ul>
+	</div>
+	<a class="big_button" id="js_submit">添加</a>
+
+    <div style="text-align: center; display: none;" id="js_deletePart">
+        <a class="delete_driverLicense" onclick="$('.delete_driverLicense_dialog').show()">删除驾驶证信息</a>
+        <div class="delete_driverLicense_dialog">
+            <div>
+                您是否要删除驾驶证信息？
+                <a class="delete_driverLicense_yes" id="js_yes">是</a><a class="delete_driverLicense_no" id="js_no">否</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        var timeStamp = (+new Date());
+        document.write('<script src="../js/addlicense.bundle.js?' + timeStamp + '"><\/script>' )
+    </script>
+</body>
+</html>

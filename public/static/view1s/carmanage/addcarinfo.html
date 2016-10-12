@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>添加车辆</title>
+    <link href="../css/style.css" rel="stylesheet"/>
+    
+</head>
+<body class="bg_color">
+	<div class="wrapper">
+        <div class="tips">请对照《机动车行驶证》填写以下信息</div>
+		<ul class="border_bottom border_top ul_style">
+			<li class="border_top">
+				<label class="color3">车辆类型</label>
+				<div id="vehicles_kind">
+					<div style="margin: 0 1rem 0 6.5rem;" id="js_chooseType" >
+						<input id="vehicles_kind_value" type="text" data-no="02" value="小型汽车" readonly/>
+					</div>
+                    <div class="vehicles_kind_choose" id="js_vehicles">
+                    </div>
+				</div>
+			</li>
+			<li class="border_top">
+				<label class="color3">车牌号码</label>
+				<div id="vehicles_number">
+					<div style="margin: 0 2rem 0 6rem;" id="js_choosePlate">
+						<input id="vehicles_number_value" readonly type="text" value="京"/>
+					</div>
+                    <div class="vehicles_number_choose" id="js_plate">
+                    </div>
+                </div>
+				<input style="margin-left: 4.5rem; max-width: 7rem;" id="js_NO" type="text" placeholder="请输入完整车牌号"/>
+			</li>
+			<li class="border_top">
+                <label class="color3">发动机号</label>
+                <input  type="text" placeholder="请输入发动机号" id="js_engineNo" />
+                <a class="about" id="js_helpengine"></a>
+                <div class="mask">
+                    <img src="../images/engine.png"/>
+                    <!-- <div class="close_mask" id="js_NOhelp">我知道了</div> -->
+                </div>
+            </li>
+			<li class="border_top">
+                <label class="color3">车辆名称</label>
+                <input  type="text" placeholder="京A073379" id="js_displayname" />
+            </li>
+		</ul>
+	</div>
+	<a class="big_button" id="js_submit">保存并查询</a>
+    <div style="text-align: center;display: none;" id="js_deletePart">
+        <a class="delete_vehicles" id="js_delete">删除车辆信息</a>
+        <div class="delete_vehicles_dialog">
+            <div>
+               您是否要删除该号牌所有信息？
+                <a class="delete_vehicles_yes" id="js_yes">是</a><a class="delete_vehicles_no" id="js_no">否</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../js/addcarinfo.bundle.js?clear=123456"></script>
+</body>
+</html>
